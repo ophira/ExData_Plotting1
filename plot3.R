@@ -3,9 +3,9 @@ setwd("~/Documents/Programming/DataSci/coursera series/exploratoryanalysis/ExDat
 download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip","household_power_consumption.zip",method="curl")
 
 unzip("household_power_consumption.zip")
-hpc <- read.table("household_power_consumption.txt", header=TRUE, sep=";")
+hpc <- read.table("household_power_consumption.txt", header=TRUE, sep=";", stringsAsFactors=FALSE)
 hpc$date<-as.Date(hpc$Date, format="%d/%m/%Y")
-hpc$datetime<-paste(hpcdate, hpc$Time)
+hpc$datetime<-paste(hpc$date, hpc$Time)
 # create subset of dataset with only observations from Feb 1 and Feb 2, 2007
 hpc1<-hpc[hpc$date=="2007-02-01" | hpc$date=="2007-02-02",]
 
@@ -15,6 +15,7 @@ sum(hpc1$Date=="?" | hpc1$Time=="?" | hpc1$Global_active_power=="?" | hpc1$Globa
 
 
 # Creating plot3.png
+
 # Convert datetime to proper R-readable format
 hpc1$datetime<-strptime(hpc1$datetime, format="%Y-%m-%d %H:%M:%S")
 

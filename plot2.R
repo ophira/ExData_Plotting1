@@ -5,7 +5,7 @@ download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_p
 unzip("household_power_consumption.zip")
 hpc <- read.table("household_power_consumption.txt", header=TRUE, sep=";")
 hpc$date<-as.Date(hpc$Date, format="%d/%m/%Y")
-hpc$datetime<-paste(hpcdate, hpc$Time)
+hpc$datetime<-paste(hpc$date, hpc$Time)
 # create subset of dataset with only observations from Feb 1 and Feb 2, 2007
 hpc1<-hpc[hpc$date=="2007-02-01" | hpc$date=="2007-02-02",]
 
@@ -14,7 +14,7 @@ sum(hpc1$Date=="?" | hpc1$Time=="?" | hpc1$Global_active_power=="?" | hpc1$Globa
 # 0 missing values in subset, so irrelevant
 
 
-# Creating plot1.png
+# Creating plot2.png
 # Convert Global Active Power to numeric
 hpc1$global_active_power<-as.numeric(levels(hpc1$Global_active_power))[hpc1$Global_active_power]
 
