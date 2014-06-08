@@ -23,5 +23,5 @@ hpc1$global_active_power<-as.numeric(levels(hpc1$Global_active_power))[hpc1$Glob
 hpc1$datetime<-strptime(hpc1$datetime, format="%Y-%m-%d %H:%M:%S")
 
 png(filename = "plot2.png", width = 480, height = 480)
-with(hpc1, plot(datetime,global_active_power, ylab = "Global Active Power (kilowatts)", xlab="", type="l"))
+with(hpc1, plot(datetime,global_active_power, ylab = "Global Active Power (kilowatts) ", xlab="", type="l"))
 dev.off()

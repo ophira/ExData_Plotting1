@@ -25,7 +25,7 @@ hpc1$datetime<-strptime(hpc1$datetime, format="%Y-%m-%d %H:%M:%S")
 png(filename = "plot4.png", width = 480, height = 480)
 par(mfrow=c(2,2))
 with(hpc1, {
-	plot(datetime, Global_active_power, ylab="Global Active Power", xlab = "", type="l")
+	plot(datetime, Global_active_power, ylab="Global Active Power ", xlab = "", type="l")
  	plot(datetime, Voltage, ylab="Voltage", type="l")
  	plot(datetime, Sub_metering_1, type="l", yaxp=c(0,30,3), ylab="Energy sub metering", xlab="")
  		points(datetime, Sub_metering_2, type="l", col="red")

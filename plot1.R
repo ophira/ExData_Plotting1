@@ -20,5 +20,5 @@ sum(hpc1$Date=="?" | hpc1$Time=="?" | hpc1$Global_active_power=="?" | hpc1$Globa
 hpc1$global_active_power<-as.numeric(levels(hpc1$Global_active_power))[hpc1$Global_active_power]
 
 png(filename = "plot1.png", width = 480, height = 480)
-with(hpc1, hist(global_active_power, main = "Global Active Power", col="red", xlab = "Global Active Power (kilowatts)"))
+with(hpc1, hist(global_active_power, main = "Global Active Power ", col="red", xlab = "Global Active Power (kilowatts)"))
 dev.off()
