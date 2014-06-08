@@ -1,9 +1,10 @@
+# Exploratory Data Analysis Project #1 Plot #4 
 # Intro
 setwd("~/Documents/Programming/DataSci/coursera series/exploratoryanalysis/ExData_Plotting1")
 download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip","household_power_consumption.zip",method="curl")
 
 unzip("household_power_consumption.zip")
-hpc <- read.table("household_power_consumption.txt", header=TRUE, sep=";")
+hpc <- read.table("household_power_consumption.txt", header=TRUE, sep=";", stringsAsFactors=FALSE)
 hpc$date<-as.Date(hpc$Date, format="%d/%m/%Y")
 hpc$datetime<-paste(hpc$date, hpc$Time)
 # create subset of dataset with only observations from Feb 1 and Feb 2, 2007
@@ -29,7 +30,7 @@ with(hpc1, {
  	plot(datetime, Sub_metering_1, type="l", yaxp=c(0,30,3), ylab="Energy sub metering", xlab="")
  		points(datetime, Sub_metering_2, type="l", col="red")
  		points(datetime, Sub_metering_3, type="l", col="blue")
- 		legend("topright", lwd=1, col=c("black", "red", "blue"), 						legend=c("Sub_metering_1", "Sub_metering_2", 					"Sub_metering_3"), border="")
+ 		legend("topright", lwd=1, col=c("black", "red", "blue"), 						legend=c("Sub_metering_1", "Sub_metering_2", 					"Sub_metering_3"), border=FALSE)
  	plot(datetime, Global_reactive_power, type="l")
 })
 dev.off()

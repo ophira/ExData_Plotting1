@@ -1,3 +1,4 @@
+# Exploratory Dat Analysis Project #1 Plot #3
 # Intro
 setwd("~/Documents/Programming/DataSci/coursera series/exploratoryanalysis/ExData_Plotting1")
 download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip","household_power_consumption.zip",method="curl")
